@@ -13,8 +13,7 @@ class Program{
             switch (menu){
                 case 1:
                 foreach(KeyValuePair<string, int> material in dicMateriales){
-                    Console.WriteLine("Material: " + material.Key);
-                    Console.WriteLine("Cantidad: " + material.Value);
+                    Console.WriteLine("Material: " + material.Key + " Cantidad: " + material.Value);
                 }
                 break;
                 case 2:
@@ -38,6 +37,9 @@ class Program{
                 else{
                     Console.WriteLine("No se encontro este material.");
                 }
+                if (dicMateriales[materialARestar] < 5){
+                    Console.WriteLine("ALERTA: REABASTECER " + materialARestar);
+                }
                 break;
                 case 4:
                 string materialAConsultar = ingresarString("Ingresar el material a consultar: ");
@@ -47,9 +49,6 @@ class Program{
                 }
                 else{
                     Console.WriteLine("No se encontro este material.");
-                }
-                if (dicMateriales.ContainsKey(materialAConsultar).Value < 5){
-                    Console.WriteLine("ALERTA: REABASTECER " + materialAConsultar);
                 }
                 break;
                 case 5:
